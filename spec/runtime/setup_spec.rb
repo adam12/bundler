@@ -727,7 +727,7 @@ RSpec.describe "Bundler.setup" do
     expect(out).to be_empty
   end
 
-  it "does not load all gemspecs", :rubygems => ">= 2.3" do
+  it "does not load all gemspecs" do
     install_gemfile! <<-G
       source "file://#{gem_repo1}"
       gem "rack"
@@ -1243,7 +1243,7 @@ end
   end
 
   describe "with gemified standard libraries" do
-    it "does not load Psych", :ruby => "~> 2.2" do
+    it "does not load Psych" do
       gemfile ""
       ruby <<-RUBY
         require 'bundler/setup'
