@@ -90,7 +90,7 @@ module Bundler
         path = settings[:bin] || "bin"
         path = Pathname.new(path).expand_path(root).expand_path
         SharedHelpers.filesystem_access(path) {|p| FileUtils.mkdir_p(p) }
-        path
+        path.realpath
       end
     end
 
